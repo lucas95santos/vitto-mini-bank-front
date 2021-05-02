@@ -25,6 +25,9 @@ export const Dashboard: React.FC = () => {
                 <span>Saldo atual</span>
                 <p>R$ 2000,00</p>
               </li>
+              <li>
+                <button type="button">Encerrar sessão</button>
+              </li>
             </ul>
           </aside>
 

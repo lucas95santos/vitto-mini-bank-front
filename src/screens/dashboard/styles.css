@@ -25,6 +25,17 @@
   margin-top: var(--small-spacing);
 }
 
+.dashboard__content li > button {
+  padding: var(--small-spacing);
+  padding-bottom: 6px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  margin-top: var(--medium-spacing);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.750rem;
+}
+
 .dashboard__content h2 {
   margin-bottom: calc(var(--default-spacing)*3);
 }
