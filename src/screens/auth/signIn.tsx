@@ -1,13 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+// compontents
 import { Panel } from '../../components';
 // styles
 import './styles.css';
 
 export const SignIn: React.FC = () => {
+  const history = useHistory();
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     // TODO
+    history.push('inicio');
   }
 
   return (

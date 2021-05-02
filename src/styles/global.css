@@ -35,6 +35,22 @@ body {
   background-color: var(--background-color);
 }
 
+aside {
+  flex: 1;
+}
+
+main {
+  flex: 2.5;
+}
+
+ul {
+  list-style: none;
+}
+
+li + li {
+  margin-top: var(--medium-spacing);
+}
+
 button {
   outline: 0;
   border: 0;

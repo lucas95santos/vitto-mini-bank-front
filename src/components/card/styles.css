@@ -1,0 +1,30 @@
+.card {
+  flex-basis: 33%;
+  flex-grow: 1;
+  background-color: var(--primary-color);
+  border-radius: var(--default-border-radius);
+  padding: var(--medium-spacing);
+  display: flex;
+  cursor: pointer;
+  transition: transform linear .2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card__text {
+  flex: 1;
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.card__image {
+  margin-left: var(--medium-spacing);
+}
+
+.card__image img {
+  width: 96px;
+  object-fit: cover;
+}
