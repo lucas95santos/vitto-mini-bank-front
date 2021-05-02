@@ -1,6 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600&display=swap');
+
+:root {
+  --background-color: #F1F3F6;
+  --primary-color: #2EA1FB;
+  --white-color: #FFFFFF;
+  --text-color: #444444;
+  --placeholder-color: #DDDDDD;
+  --input-border-color: #DDDDDD;
+  --input-focus-border-color: #2EA1FB;
+  --default-border-radius: 4px;
+  --small-spacing: 8px;
+  --default-spacing: 16px;
+  --medium-spacing: 24px;
+  --large-spacing: 32px;
+}
+
 * {
   margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+}
+
+body, html, input, button {
+  font-size: 16px;
+  font-family: 'Spartan', sans-serif;
+}
+
+body, html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+button {
+  outline: 0;
+  border: 0;
+  border-radius: var(--default-border-radius);
+  cursor: pointer;
+  transition: filter linear .2s;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+input {
+  width: fit-content;
+  height: 48px;
+  padding: var(--default-spacing);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--input-border-color);
+  border-radius: var(--default-border-radius);
+  color: var(--text-color);
+  transition: border-color linear .2s;
+}
+
+input::placeholder {
+  color: var(--placeholder-color);
+}
+
+input:focus {
+  border-color: var(--input-focus-border-color);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 1.250rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: filter linear .2s;
+}
+
+a:hover {
+  filter: brightness(90%);
 }

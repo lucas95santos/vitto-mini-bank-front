@@ -1,0 +1,7 @@
+.panel-container {
+  width: 60vw;
+  height: 60vh;
+  background-color: var(--white-color);
+  border-radius: var(--default-border-radius);
+  box-shadow: 0 0 2px 2px #00000015;
+}
