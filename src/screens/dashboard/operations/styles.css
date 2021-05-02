@@ -1,0 +1,10 @@
+.withdraw, .deposit {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.withdraw input, .deposit input {
+  width: 100%;
+  background-color: var(--white-color);
+}

@@ -8,9 +8,10 @@ interface DialogProps extends React.HTMLAttributes<HTMLDivElement> {
   headerTitle: string;
   showDialog: boolean;
   onCloseDialog: Function;
+  sholdDismissDialog?: boolean;
 }
 
-export const Dialog: React.FC<DialogProps> = ({ headerTitle, showDialog, onCloseDialog, children }) => {
+export const Dialog: React.FC<DialogProps> = ({ headerTitle, showDialog, sholdDismissDialog, onCloseDialog, children }) => {
   const dialogRef = useRef<HTMLDivElement>();
   const dialogContentRef = useRef<HTMLDivElement>();
 
@@ -23,14 +24,14 @@ export const Dialog: React.FC<DialogProps> = ({ headerTitle, showDialog, onClose
   }, [onCloseDialog])
 
   useEffect(() => {
-    if (showDialog) {
+    if (sholdDismissDialog && showDialog) {
       document.addEventListener('click', handleClickOutside, false);
     }
 
     return () => {
       document.removeEventListener('click', handleClickOutside, false);
     }
-  }, [showDialog, handleClickOutside]);
+  }, [sholdDismissDialog, showDialog, handleClickOutside]);
 
   return (
     <div
@@ -40,7 +41,7 @@ export const Dialog: React.FC<DialogProps> = ({ headerTitle, showDialog, onClose
       <div className="dialog__content" ref={dialogContentRef as any}>
         <div className="dialog__content__header">
           <p>{headerTitle}</p>
-          <MdClose onClick={() => onCloseDialog()} />
+          {sholdDismissDialog && <MdClose onClick={() => onCloseDialog()} />}
         </div>
         <div className="dialog__content__body">
           {children}
@@ -48,4 +49,8 @@ export const Dialog: React.FC<DialogProps> = ({ headerTitle, showDialog, onClose
       </div>
     </div>
   );
+}
+
+Dialog.defaultProps = {
+  sholdDismissDialog: true
 }
