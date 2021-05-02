@@ -7,9 +7,9 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   image: any;
 }
 
-export const Card: React.FC<CardProps> = ({ text, image }) => {
+export const Card: React.FC<CardProps> = ({ text, image, ...rest }) => {
   return (
-    <div className="card">
+    <div className="card" {...rest}>
       <div className="card__text">
         {text}
       </div>

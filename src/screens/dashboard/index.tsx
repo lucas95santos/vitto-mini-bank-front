@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 // compontents
-import { Panel, Card } from '../../components';
+import { Panel, Card, Dialog } from '../../components';
 // styles
 import './styles.css';
 // images
@@ -9,39 +9,56 @@ import depositImg from '../../images/deposit.svg';
 import statementImg from '../../images/statement.svg';
 
 export const Dashboard: React.FC = () => {
+  const [showDialog, setShowDialog] = useState(false);
+  const [currentOperation, setCurrentOperation] = useState('');
+
+  const handleOperationClick = (operationTitle: string) => {
+    setCurrentOperation(operationTitle);
+    setShowDialog(true);
+  }
+
   return (
-    <div className="dashboard">
-      <Panel size="large">
-        <h1>Vitto Mini Bank</h1>
+    <>
+      <div className="dashboard">
+        <Panel size="large">
+          <h1>Vitto Mini Bank</h1>
 
-        <div className="dashboard__content">
-          <aside>
-            <ul>
-              <li>
-                <span>Bem vindo</span>
-                <p>John Doe</p>
-              </li>
-              <li>
-                <span>Saldo atual</span>
-                <p>R$ 2000,00</p>
-              </li>
-              <li>
-                <button type="button">Encerrar sessão</button>
-              </li>
-            </ul>
-          </aside>
+          <div className="dashboard__content">
+            <aside>
+              <ul>
+                <li>
+                  <span>Bem vindo</span>
+                  <p>John Doe</p>
+                </li>
+                <li>
+                  <span>Saldo atual</span>
+                  <p>R$ 2000,00</p>
+                </li>
+                <li>
+                  <button type="button">Encerrar sessão</button>
+                </li>
+              </ul>
+            </aside>
 
-          <main>
-            <h2>O que deseja fazer?</h2>
+            <main>
+              <h2>O que deseja fazer?</h2>
 
-            <div className="dashboard__operations">
-              <Card text="Saque" image={withdrawImg} />
-              <Card text="Depósito" image={depositImg} />
-              <Card text="Extrato e Saldo" image={statementImg} />
-            </div>
-          </main>
-        </div>
-      </Panel>
-    </div>
+              <div className="dashboard__operations">
+                <Card text="Saque" image={withdrawImg} onClick={() => handleOperationClick('Saque')} />
+                <Card text="Depósito" image={depositImg} onClick={() => handleOperationClick('Depósito')} />
+                <Card text="Extrato e Saldo" image={statementImg} onClick={() => handleOperationClick('Extrato e Saldo')} />
+              </div>
+            </main>
+          </div>
+        </Panel>
+      </div>
+      <Dialog
+        onCloseDialog={setShowDialog}
+        showDialog={showDialog}
+        headerTitle={currentOperation}
+      >
+        conteudo
+      </Dialog>
+    </>
   );
 }
