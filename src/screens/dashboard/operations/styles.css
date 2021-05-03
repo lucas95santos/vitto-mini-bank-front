@@ -1,4 +1,4 @@
-.withdraw, .deposit {
+.withdraw, .deposit, .statement {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -7,4 +7,65 @@
 .withdraw input, .deposit input {
   width: 100%;
   background-color: var(--white-color);
+}
+
+.statement__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--divider-color);
+  padding-bottom: var(--small-spacing);
+  margin-bottom: var(--default-spacing);
+}
+
+.statement__info span {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.statement__info span:first-child {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.statement__content {
+  overflow-y: auto;
+  max-height: 340px;
+  padding: 0 var(--small-spacing);
+}
+
+.statement__content::-webkit-scrollbar {
+  width: 4px;
+  background-color: #DDDDDD;
+  border-radius: 5px;
+}
+
+.statement__content::-webkit-scrollbar-thumb {
+  background-color: #bbbbbb;
+  border-radius: 5px;
+}
+
+.statement__content li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statement__content li span {
+  font-size: 0.750rem;
+  color: var(--text-color);
+}
+
+.statement__content li span:first-child {
+  font-size: 0.650rem;
+}
+
+.in-color {
+  color: #388E3C !important;
+}
+
+.out-color {
+  color: #D84315 !important;
 }
