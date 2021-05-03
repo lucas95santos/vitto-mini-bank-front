@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Panel, Card, Dialog } from '../../components';
 // intenal components
 import { Withdraw, Deposit, Statement } from './operations';
+// icons
+import { MdPowerSettingsNew as SignOut } from 'react-icons/md';
 // styles
 import './styles.css';
 // images
@@ -56,7 +58,10 @@ export const Dashboard: React.FC = () => {
                   <p>R$ 2000,00</p>
                 </li>
                 <li>
-                  <button type="button">Encerrar sessão</button>
+                  <button type="button">
+                    <SignOut />
+                    Encerrar sessão
+                  </button>
                 </li>
               </ul>
             </aside>

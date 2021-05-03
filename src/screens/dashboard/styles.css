@@ -26,14 +26,19 @@
 }
 
 .dashboard__content li > button {
-  padding: var(--small-spacing);
-  padding-bottom: 6px;
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  padding: 0;
+  background-color: transparent;
+  color: var(--primary-color);
   margin-top: var(--medium-spacing);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.750rem;
+}
+
+.dashboard__content li > button svg {
+  margin-right: var(--small-spacing);
+  margin-bottom: -3px;
+  font-size: 1rem;
 }
 
 .dashboard__content h2 {
