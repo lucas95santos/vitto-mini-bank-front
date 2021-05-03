@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 // compontents
 import { Panel, Card, Dialog } from '../../components';
 // intenal components
@@ -18,11 +19,17 @@ interface Operation {
 }
 
 export const Dashboard: React.FC = () => {
+  const history = useHistory();
+
   const [showDialog, setShowDialog] = useState(false);
   const [currentOperation, setCurrentOperation] = useState<Operation>({
     title: '',
     type: null
   });
+
+  const goTo = (route: string) => {
+    history.push(route);
+  }
 
   const handleOperationClick = (operation: Operation) => {
     setCurrentOperation(operation);
@@ -58,7 +65,7 @@ export const Dashboard: React.FC = () => {
                   <p>R$ 2000,00</p>
                 </li>
                 <li>
-                  <button type="button">
+                  <button type="button" onClick={() => goTo('')}>
                     <SignOut />
                     Encerrar sessão
                   </button>
